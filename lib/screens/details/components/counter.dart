@@ -16,7 +16,7 @@ class _CartCounterState extends State<CartCounter> {
     return Row(
       children: <Widget>[
         buildOutlineButton(
-          icon: Icons.remove,
+          icon: Icons.remove,       //nút trừ
           press: () {
             if (numOfItems > 1) {
               setState(() {
@@ -33,7 +33,7 @@ class _CartCounterState extends State<CartCounter> {
             style: Theme.of(context).textTheme.headline6,
           ),
         ),
-        buildOutlineButton(
+        buildOutlineButton(       //nút cộng
             icon: Icons.add,
             press: () {
               setState(() {

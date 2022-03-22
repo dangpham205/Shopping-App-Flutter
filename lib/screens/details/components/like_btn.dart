@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'cart_counter.dart';
+import 'counter.dart';
 
 class CounterWithFavBtn extends StatelessWidget {
   const CounterWithFavBtn({
@@ -11,7 +11,7 @@ class CounterWithFavBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,    //đẩy counter với like btn ra 2 đầu
       children: <Widget>[
         CartCounter(),
         Container(

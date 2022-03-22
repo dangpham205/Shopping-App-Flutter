@@ -11,22 +11,22 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // each product have a color
-      backgroundColor: product.color,
+      backgroundColor: product.color,   //màu bac là màu của product
       appBar: buildAppBar(context),
       body: Body(product: product),
     );
   }
 
-  AppBar buildAppBar(BuildContext context) {
+  AppBar buildAppBar(BuildContext context) {    //app bar giống màn home
     return AppBar(
       backgroundColor: product.color,
-      elevation: 0,
+      elevation: 1,
       leading: IconButton(
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
           color: Colors.white,
         ),
-        onPressed: () => Navigator.pop(context),
+        onPressed: () => Navigator.pop(context),      // pop màn này trên stack để quay về màn trước
       ),
       actions: <Widget>[
         IconButton(

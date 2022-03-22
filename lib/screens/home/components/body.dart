@@ -16,7 +16,14 @@ class Body extends StatelessWidget {
               // padding: EdgeInsets.all(kDefaultPaddin),
             padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin, vertical: kDefaultPaddin),
             child: RefreshIndicator(
-              onRefresh: () async=> loadProducts(number, context),
+              onRefresh: () async{
+                if (number == 0){
+                  loadProducts(0, context);
+                }
+                else if (number == 1){
+                  loadProducts(1, context);
+                }
+              },
               child: GridView.builder(
                   itemCount: products.length,   //giống trong categories, cung cấp length của cái list trc để flutter tự loop và hiện lên
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -36,8 +43,8 @@ class Body extends StatelessWidget {
   ItemCard loadProducts(int index, BuildContext context) {
     if (number == 0 ){
       return ItemCard(
-                    product: products[index],
-                    press: () => Navigator.push(
+                    product: products[index],       //tạo 1 obj product (item_card)
+                    press: () => Navigator.push(    //dùng push và pop để chuyển màn
                         context,
                         MaterialPageRoute(
                           builder: (context) => DetailsScreen(

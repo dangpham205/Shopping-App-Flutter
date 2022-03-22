@@ -19,10 +19,10 @@ class AddToCart extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
       child: Row(
         children: <Widget>[
-          Container(
+          Container(      //nút add to cart
             margin: EdgeInsets.only(right: kDefaultPaddin),
             height: 50,
-            width: 58,
+            width: 60,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
               border: Border.all(
@@ -37,7 +37,7 @@ class AddToCart extends StatelessWidget {
               onPressed: () {},
             ),
           ),
-          Expanded(
+          Expanded(     //nút buy now
             child: SizedBox(
               height: 50,
               child: FlatButton(

@@ -10,6 +10,7 @@ class ProductTitleWithImage extends StatelessWidget {
 
   final Product product;
 
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,8 +18,9 @@ class ProductTitleWithImage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          SizedBox(height: kDefaultPaddin / 2),
           Text(
-            "Supermoto",
+            "Product :",
             style: TextStyle(color: Colors.white),
           ),
           Text(
@@ -28,7 +30,6 @@ class ProductTitleWithImage extends StatelessWidget {
                 .headline4
                 .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: kDefaultPaddin),
           Row(
             children: <Widget>[
               RichText(
@@ -44,10 +45,10 @@ class ProductTitleWithImage extends StatelessWidget {
                 ),
               ),
               SizedBox(width: kDefaultPaddin),
-              Expanded(
+              Expanded(           //cái này sẽ làm cho row height to lên (do tấm hình bự), mà rich text thì nằm giữa row height ==> có khoảng cách giữa title và rich text
                 child: Hero(
                   tag: "${product.id}",
-                  child: Image.asset(
+                  child: Image.asset(     //tạo ra floating image
                     product.image,
                     fit: BoxFit.fill,
                   ),

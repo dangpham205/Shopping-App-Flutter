@@ -68,11 +68,11 @@ List<Product> products = [
   Product(
       id: 1,
       title: "Bike 1",
-      price: 2340000,
+      price: 23400,
       size: 0,
       description: descript,
       image: "assets/images/bike_1.png",
-      color: Color(0xFF3D82AE)),
+      color: Color.fromARGB(255, 107, 0, 107)),
   Product(
       id: 2,
       title: "Bike 2",
@@ -80,7 +80,7 @@ List<Product> products = [
       size: 8,
       description: descript,
       image: "assets/images/bike_2.png",
-      color: Color(0xFFD3A984)),
+      color: Color.fromARGB(255, 255, 5, 5)),
   Product(
       id: 3,
       title: "Bike 3",
@@ -88,7 +88,7 @@ List<Product> products = [
       size: 10,
       description: descript,
       image: "assets/images/bike_3.png",
-      color: Color(0xFF989493)),
+      color: Color.fromARGB(255, 138, 86, 235)),
   Product(
       id: 4,
       title: "Bike 4",
@@ -96,7 +96,7 @@ List<Product> products = [
       size: 11,
       description: descript,
       image: "assets/images/bike_4.png",
-      color: Color(0xFFE6B398)),
+      color: Color.fromARGB(255, 97, 35, 2)),
   Product(
       id: 5,
       title: "Bike 5",
@@ -104,7 +104,7 @@ List<Product> products = [
       size: 12,
       description: descript,
       image: "assets/images/bike_5.png",
-      color: Color(0xFFFB7883)),
+      color: Color.fromARGB(255, 15, 0, 100)),
   Product(
     id: 6,
     title: "Bike 6",
@@ -112,7 +112,7 @@ List<Product> products = [
     size: 12,
     description: descript,
     image: "assets/images/bike_6.png",
-    color: Color(0xFFAEAEAE),
+    color: Color.fromARGB(255, 0, 173, 72),
   ),
 ];
 
