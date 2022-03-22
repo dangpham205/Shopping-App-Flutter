@@ -13,16 +13,20 @@ class Body extends StatelessWidget {
         Categories(),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
-            child: GridView.builder(
-                itemCount: products.length,   //giống trong categories, cung cấp length của cái list trc để flutter tự loop và hiện lên
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 1,    //số cột hiển thị product
-                  mainAxisSpacing: kDefaultPaddin,    //spacing chiều dọc
-                  crossAxisSpacing: kDefaultPaddin,   //spacing chiều ngang
-                  childAspectRatio: 1,
-                ),
-                itemBuilder: (context, index) => loadProducts(index, context)),
+              // padding: EdgeInsets.all(kDefaultPaddin),
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin, vertical: kDefaultPaddin),
+            child: RefreshIndicator(
+              onRefresh: () async=> loadProducts(number, context),
+              child: GridView.builder(
+                  itemCount: products.length,   //giống trong categories, cung cấp length của cái list trc để flutter tự loop và hiện lên
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 1,    //số cột hiển thị product
+                    mainAxisSpacing: kDefaultPaddin,    //spacing chiều dọc
+                    crossAxisSpacing: kDefaultPaddin,   //spacing chiều ngang
+                    childAspectRatio: 1,
+                  ),
+                  itemBuilder: (context, index) => loadProducts(index, context)),
+            ),
           ),
         ),
       ],
