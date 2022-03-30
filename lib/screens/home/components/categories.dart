@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/models/Product.dart';
-
 import '../../../constants.dart';
 
 // We need satefull widget for our categories
-int number = 0;
+int number =  0;
 
 class Categories extends StatefulWidget {
   @override
@@ -36,6 +35,7 @@ class _CategoriesState extends State<Categories> {
         setState(() {
           selectedIndex = index;
           number = index;
+          
         });
       },
       child: Padding(
