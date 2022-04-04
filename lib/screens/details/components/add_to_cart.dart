@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:plant_app/screens/buy_now.dart';
 import '../../../models/Product.dart';
 import '../../../constants.dart';
 
@@ -38,19 +39,28 @@ class AddToCart extends StatelessWidget {
             ),
           ),
           Expanded(     //nút buy now
-            child: SizedBox(
-              height: 50,
-              child: FlatButton(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(18)),
-                color: product.color,
-                onPressed: () {},
-                child: Text(
-                  "Buy  Now".toUpperCase(),
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+            child: Hero(
+              tag: 'button',
+              child: SizedBox(
+                height: 50,
+                child: FlatButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18)),
+                  color: product.color,
+                  onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BuyNow(
+                              product: this.product,
+                            ),
+                          )),
+                  child: Text(
+                    "Buy  Now".toUpperCase(),
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

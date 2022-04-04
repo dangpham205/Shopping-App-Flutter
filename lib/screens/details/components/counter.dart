@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../../constants.dart';
 
+int count =1 ;
+
 class CartCounter extends StatefulWidget {
   @override
   _CartCounterState createState() => _CartCounterState();
@@ -21,6 +23,7 @@ class _CartCounterState extends State<CartCounter> {
             if (numOfItems > 1) {
               setState(() {
                 numOfItems--;
+                count = numOfItems;
               });
             }
           },
@@ -38,6 +41,7 @@ class _CartCounterState extends State<CartCounter> {
             press: () {
               setState(() {
                 numOfItems++;
+                count = numOfItems;
               });
             }),
       ],

@@ -50,7 +50,7 @@ class Body extends StatelessWidget {
                     ],
                   ),
                 ),
-                ProductTitleWithImage(product: product)   // phải để này bên dưới để tấm hình float lên thằng container ở trên
+                ProductTitleWithImage(product: product),   // phải để này bên dưới để tấm hình float lên thằng container ở trên
               ],
             ),
           )

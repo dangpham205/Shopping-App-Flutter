@@ -23,12 +23,15 @@ class ProductTitleWithImage extends StatelessWidget {
             "Product :",
             style: TextStyle(color: Colors.white),
           ),
-          Text(
-            product.title,
-            style: Theme.of(context)
-                .textTheme
-                .headline4
-                .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+          Hero(
+            tag: 'name',
+            child: Text(
+              product.title,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline4
+                  .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+            ),
           ),
           Row(
             children: <Widget>[

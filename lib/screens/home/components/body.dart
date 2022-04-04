@@ -20,7 +20,7 @@ class _BodyState extends State<Body> {
       onTap: () {
         setState(() {
           selectedIndex = index;
-          number = index;
+          number = index;   //khi index đổi thì loadproducts cũng sẽ tự update
           
         });
       },

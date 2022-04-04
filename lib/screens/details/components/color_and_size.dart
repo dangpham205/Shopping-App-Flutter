@@ -21,9 +21,12 @@ class ColorAndSize extends StatelessWidget {
               Text("Color"),
               Row(
                 children: <Widget>[
-                  ColorDot(
-                    color: product.color,
-                    isSelected: true,
+                  Hero(
+                    tag: 'color',
+                    child: ColorDot(
+                      color: product.color,
+                      isSelected: true,
+                    ),
                   ),
                   ColorDot(color: Color(0xFFF8C078)),
                   ColorDot(color: Color(0xFFA29B9B)),
@@ -33,19 +36,22 @@ class ColorAndSize extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: RichText(
-            text: TextSpan(
-              style: TextStyle(color: kTextColor),
-              children: [
-                TextSpan(text: "Size\n"),
-                TextSpan(
-                  text: "${product.size} cm",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline5
-                      .copyWith(fontWeight: FontWeight.bold),
-                )
-              ],
+          child: Hero(
+            tag: 'size',
+            child: RichText(
+              text: TextSpan(
+                style: TextStyle(color: kTextColor),
+                children: [
+                  TextSpan(text: "Size\n"),
+                  TextSpan(
+                    text: "${product.size} cm",
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline5
+                        .copyWith(fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
             ),
           ),
         ),
